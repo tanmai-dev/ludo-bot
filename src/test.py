@@ -9,5 +9,4 @@ for i in ["R", "G", "B", "Y"]:
     board[i+"W"] = 0
 print(board)
 
-print('hi')
 print('hello world')
