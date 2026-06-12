@@ -8,3 +8,6 @@ for i in ["R", "G", "B", "Y"]:
         board[i+str(j)+"B"] = 0
     board[i+"W"] = 0
 print(board)
+
+
+print('hello world')
