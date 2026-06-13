@@ -37,6 +37,8 @@ class GameState:
         Move_status = False
         for i in range(4):
             key = color + str(i+1)
+            if self.board.get(key) is None:
+                continue
             if key == piece:
                 continue
             else:
@@ -120,6 +122,7 @@ class GameState:
             self.players.remove(self.current_player)
             self.winners.append(self.current_player.color)
             self.player_no -= 1
+            if move_status: self.update_board
 
         if self.player_no == 1:
             print("Game Ends!")
