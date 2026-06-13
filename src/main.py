@@ -19,7 +19,6 @@ for i in range(1000):
 
         if result == "over":
             for j in range(3):
-                print(game.winners)
                 score[game.winners[j]] += 3-j
             break
 
