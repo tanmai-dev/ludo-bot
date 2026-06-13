@@ -127,16 +127,15 @@ class GameState:
             self.winners.append(self.current_player.color)
             self.player_no -= 1
     
+            if self.player_no == 1:
+                print("Game Ends!")
+        
+                for i in range(3):
+                    print(f"Ranking {i+1}: Player {self.winners[i]}")
+        
+                print("*"*75)
+                return "over"
             return "next"
-    
-        if self.player_no == 1:
-            print("Game Ends!")
-    
-            for i in range(3):
-                print(f"Ranking {i+1}: Player {self.winners[i]}")
-    
-            print("*"*75)
-            return "over"
     
         if dice != 6:
             self.turn += 1
