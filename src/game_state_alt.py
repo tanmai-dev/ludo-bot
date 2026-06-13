@@ -99,7 +99,7 @@ class GameState:
                 result = self.move_and_capture(piece)
                 if result == "reroll":
                     self.board[piece] -= dice
-                    self.board[piece] = (self.board[piece]%52)+1
+                    self.board[piece] += 52
                     self.prog[piece] -= dice
                     print("*"*75)
                     if move_status:
