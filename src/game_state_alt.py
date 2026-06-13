@@ -42,30 +42,18 @@ class GameState:
             else:
                 if self.prog[key] == 0:
                     if dice == 6 and key[0] == "R":
-                        self.board[key] = 1
-                        self.prog[key] = 1
                         Move_status = True
                     elif dice == 6 and key[0] == "G":
-                        self.board[key] = 14
-                        self.prog[key] = 1
                         Move_status = True
                     elif dice == 6 and key[0] == "Y":
-                        self.board[key] = 27
-                        self.prog[key] = 1
                         Move_status = True
                     elif dice == 6 and key[0] == "B":
-                        self.board[key] = 40
-                        self.prog[key] = 1
                         Move_status = True
 
                 else:   
-                    if self.prog[piece] + dice > 57:
-                        pass
-                    else:
-
-                        self.board[key] += dice
-                        self.prog[key] += dice
-                        Move_status = True
+                    if self.prog[piece] + dice <= 57:
+                        Move_Status = False
+                    
             if Move_status:
                 print(f"Invalid move by {self.current_player.color}. Game Terminated!")
                 return True
