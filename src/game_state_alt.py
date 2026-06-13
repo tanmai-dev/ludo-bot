@@ -61,15 +61,16 @@ class GameState:
                 return True
         return False            
             
-
     def update_board(self):
         print("*"*75)
         dice = random.randint(1, 6)
         self.current_player = self.players[self.turn]
         print("Dice rolled:", dice)
-        piece = self.current_player.move_piece(dice, self) #piece is a string (R1,R2,...,B3,B4)
-        
+    
+        piece = self.current_player.move_piece(dice, self)
+    
         move_status = False
+    
         if self.prog[piece] == 0:
             if dice == 6 and piece[0] == "R":
                 self.board[piece] = 1
@@ -87,57 +88,65 @@ class GameState:
                 self.board[piece] = 40
                 self.prog[piece] = 1
                 move_status = True
-
-        else:   
-            if self.prog[piece] + dice > 57:
-                pass
-            else:
+    
+        else:
+            if self.prog[piece] + dice <= 57:
+    
                 if self.board[piece] != 'L':
                     self.board[piece] += dice
+    
                 self.prog[piece] += dice
                 move_status = True
+    
                 result = self.move_and_capture(piece)
+    
                 if result == "reroll":
                     self.board[piece] -= dice
                     if self.board[piece] <= 0:
                         self.board[piece] += 52
                     self.prog[piece] -= dice
+    
                     print("*"*75)
-                    if move_status:
-                        self.update_board()
+                    return "next"
+    
                 elif result == "win":
                     print("*"*75)
-                    if move_status:
-                        self.update_board()
-
-                if self.prog[piece]>51:
+                    return "next"
+    
+                if piece in self.prog and self.prog[piece] > 51:
                     self.board[piece] = 'L'
-
+    
         if not move_status:
             if self.check_move_status(dice, piece):
-                return
-            
-
+                return "terminated"
+    
         if self.current_player.in_pieces == 4:
             print(f"Player {self.current_player.color} has won the game!")
+    
             self.players.remove(self.current_player)
             self.winners.append(self.current_player.color)
             self.player_no -= 1
-            if move_status: 
-                self.update_board()
-
+    
+            return "next"
+    
         if self.player_no == 1:
             print("Game Ends!")
+    
             for i in range(3):
                 print(f"Ranking {i+1}: Player {self.winners[i]}")
+    
             print("*"*75)
-            return 
-        
+            return "over"
+    
         if dice != 6:
             self.turn += 1
+    
             if self.turn >= self.player_no:
                 self.turn %= self.player_no
-
+    
         print("*"*75)
+    
         if move_status:
-            self.update_board()
+            return "next"
+    
+        return None
