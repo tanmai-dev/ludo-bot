@@ -22,7 +22,7 @@ class GameState:
                     self.board[i] = 0
                     self.prog[i] = 0
                 elif self.board[i] == self.board[piece] and i != piece and self.board[i] != 'L' and i[0] == piece[0]:
-                    return False
+                    return "reroll"
 
     def update_board(self):
         dice = random.randint(1, 6)
