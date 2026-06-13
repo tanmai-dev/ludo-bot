@@ -10,3 +10,5 @@ def capture(self, piece):
                 self.prog[i] = 0
             elif self.board[i] == self.board[piece] and i != piece and self.board[i] != 'L' and i[0] == piece[0]:
                 return False
+
+print(-3 % 52)
