@@ -1,6 +1,5 @@
-from game_state_alt import GameState
-from player import Player
-from player_alt import EvilPlayer
+from game_state import GameState
+from random_bot import Player
 
 score = {"R":0, "G":0, "Y":0, "B":0}
 for i in range(1000):
