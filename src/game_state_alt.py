@@ -92,8 +92,8 @@ class GameState:
             if self.prog[piece] + dice > 57:
                 pass
             else:
-
-                self.board[piece] += dice
+                if self.board[piece] != 'L':
+                    self.board[piece] += dice
                 self.prog[piece] += dice
                 move_status = True
                 result = self.move_and_capture(piece)
