@@ -122,7 +122,8 @@ class GameState:
             self.players.remove(self.current_player)
             self.winners.append(self.current_player.color)
             self.player_no -= 1
-            if move_status: self.update_board
+            if move_status: 
+                self.update_board()
 
         if self.player_no == 1:
             print("Game Ends!")
