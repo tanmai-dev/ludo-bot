@@ -1,6 +1,6 @@
 # Ludo Bot Arena
 
-A programmable Ludo engine built for bot-vs-bot and human-vs-bot competitions.
+A programmable Ludo engine built for bot-vs-bot competitions.
 
 ## Overview
 
@@ -16,10 +16,10 @@ def move_piece(self, dice, game_state):
 where `piece` is one of:
 
 ```text
-R1 R2 R3 R4
-G1 G2 G3 G4
-Y1 Y2 Y3 Y4
-B1 B2 B3 B4
+"R1" "R2" "R3" "R4"
+"G1" "G2" "G3" "G4"
+"Y1" "Y2" "Y3" "Y4"
+"B1" "B2" "B3" "B4"
 ```
 
 depending on the player's color.
@@ -37,7 +37,6 @@ depending on the player's color.
 * Multiple pieces per player
 * Invalid move detection
 * Tournament mode
-* Human and bot players supported
 
 ---
 
@@ -109,6 +108,7 @@ Current player object.
 ---
 
 ## Writing a Bot
+The bot must have a `color` instance and a `in_pieces`. Their values may be used but not modified by your bot. The bot must contain a `move_piece` method which should return a string piece of form `"{color}{integer}"`. An example bot is given below.
 
 Example random bot:
 
