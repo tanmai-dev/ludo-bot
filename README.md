@@ -177,7 +177,7 @@ For a completed game:
 4th Place: 0 points
 ```
 
-Run large tournaments (100+ games recommended) to compare bot performance.
+1000 games would be played to compare performance.
 
 ---
 
