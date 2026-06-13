@@ -52,7 +52,7 @@ class GameState:
 
                 else:   
                     if self.prog[key] + dice <= 57:
-                        Move_Status = True
+                        Move_status = True
                     
             if Move_status:
                 print(f"Invalid move by {self.current_player.color}. Game Terminated!")
