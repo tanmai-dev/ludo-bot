@@ -108,7 +108,7 @@ Current player object.
 ---
 
 ## Writing a Bot
-The bot must have a `color` instance and a `in_pieces`. Their values may be used but not modified by your bot. The bot must contain a `move_piece` method which should return a string piece of form `"{color}{integer}"`. An example bot is given below.
+The bot must have instances `color` and `in_pieces`. Their values may be used but not modified by your bot. The bot must contain a `move_piece` method which should return a string piece of form `"{color}{integer}"`. An example bot is given below.
 
 Example random bot:
 
