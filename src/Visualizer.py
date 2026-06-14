@@ -1,11 +1,3 @@
-'''
-print("\U0001F7E5","\U0001F534")#red square and circle
-print("\U0001F7E9","\U0001F7E2")#green square and circle
-print("\U0001F7E8","\U0001F7E1")#yellow square and circle
-print("\U0001F7E6","\U0001F535")#blue square and circle
-print("\U00002B1C")#white square
-print("\U00002B1B")
-'''
 rs,rc="\U0001F7E5","\U0001F534"
 gs,gc="\U0001F7E9","\U0001F7E2"
 ys,yc="\U0001F7E8","\U0001F7E1"
@@ -14,6 +6,12 @@ ws= "\U00002B1C"
 bl="\U00002B1B"
 
 def view_board(board):
+    rs,rc="\U0001F7E5","\U0001F534"
+    gs,gc="\U0001F7E9","\U0001F7E2"
+    ys,yc="\U0001F7E8","\U0001F7E1"
+    bs,bc="\U0001F7E6","\U0001F535"
+    ws= "\U00002B1C"
+    bl="\U00002B1B"
     L=[
 
         [bs, bs, bs, bs, bs, bs, ws, ws, ws, rs, rs, rs, rs, rs, rs],
