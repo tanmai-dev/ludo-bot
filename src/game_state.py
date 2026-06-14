@@ -22,6 +22,7 @@ class GameState:
                 if self.board[i] == self.board[piece] and i != piece and self.board[i] != 100 and i[0]!= piece[0]:
                     self.board[i] = 0
                     self.prog[i] = 0
+                    return "capture"
                 elif self.board[i] == self.board[piece] and i != piece and self.board[i] != 100 and i[0] == piece[0]:
                     return "reroll"
         
@@ -114,6 +115,10 @@ class GameState:
                 move_status = True
     
                 result = self.move_and_capture(piece)
+
+                if result == "capture":
+                    print("*"*75)
+                    return "next"
     
                 if result == "reroll":
                     self.board[piece] -= dice
