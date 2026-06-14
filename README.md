@@ -436,7 +436,7 @@ Red gets another turn
 
 A player receives another turn if:
 
-### Rolling a 6
+### Rolling a 6/ Capturing a piece
 
 Standard Ludo rule.
 
