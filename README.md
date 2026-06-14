@@ -775,5 +775,8 @@ The only requirement:
 ```text
 Return a valid piece name.
 ```
+### NOTE
+Refrain from returning NONE, if no legal moves are available, return any active piece, the engine will detect it and skip your turn.
+The rules might change in the future and the game may become even fun to play with.
 
 May the better bot win.
